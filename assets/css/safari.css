@@ -1,0 +1,41 @@
+.mask-bottom {
+    transform: rotate(-90deg);
+    width: 150px;
+    height: 100%;
+    margin-left: 280px;
+    right: unset;
+    top: 45%;
+}
+
+@media screen and (min-width: 800px){
+    .mask-bottom {
+        display: none;
+    }
+}
+
+.event-container {
+    background-color: black
+}
+
+
+.event-container {
+    /* background-image: unset; */
+    background-attachment: unset;
+    background-size: cover;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../images/bg-event2.jpeg'); */
+    background-image: url('../images/gallery16.jpeg');
+}
+
+/* .event-container::before {
+    content: "";
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../images/bg-event2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+  } */

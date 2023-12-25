@@ -1,0 +1,838 @@
+@import url("default.css");
+/* ----------—----------—----------—----------—----------— */
+/* Splash screen */
+/* ----------—----------—----------—----------—----------— */
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff; /* Adjust the text color as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-image: url('../images/gallery2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.splash:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha (last value) for darkness */
+}
+
+/* Style the countdown container */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Style each countdown item (days, hours, minutes, seconds) */
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.countdown-item span {
+    font-size: 60px;
+    margin-top: 5px;
+}
+
+.countdown-item span.text {
+    font-size: 20px;
+}
+
+@media (max-width: 767.98px) {
+    .countdown-item span {
+        font-size: 8vw;
+    }
+    .countdown-item span.text {
+        font-size: 4vw;
+    }
+    #countdown {
+        gap: 20px;
+    }
+}
+
+.subheading {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 7px;
+    position: relative;
+}
+
+.subheading:before{
+    position: absolute;
+    top: 50%;
+    left: -150px;
+    content: '';
+    width: 130px;
+    height: 2px;
+    background: #fff;
+}
+
+.subheading:after {
+    position: absolute;
+    top: 50%;
+    right: -140px;
+    content: '';
+    width: 130px;
+    height: 2px;
+    background: #fff;
+}
+
+.bridegroom{
+    font-family: 'Great Vibes', cursive;
+    font-size: 7vw;
+    margin-top: 35px;
+    /* margin-bottom: 80px; */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767.98px) {
+    .subheading:after, .subheading:before {
+      display: none; }
+      .bridegroom{
+        font-size: 9vw;
+      } }
+
+.splash p, .splash button {
+    font-size: 10px;
+    color: white;
+}
+
+.splash button i {
+    margin-right: 8px;
+}
+
+/* Style the "Read More" button */
+#read-more {
+    margin-top: 20px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#read-more:hover {
+    background-color: #ff4f4f;
+}
+
+.splash-content {
+    text-align: center;
+    z-index: 1;
+    margin: 0 50px;
+}
+
+.splash-content p {
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.splash-content p strong {
+    font-size: 20px;
+}
+
+.hide-splash {
+    opacity: 0; /* Hide by reducing opacity to 0 */
+    transform: translateY(-100%); /* Move the splash screen up by 100% of its height */
+    transition: transform 3s ease, opacity 3s ease;
+}
+
+/* ----------—----------—----------—----------—----------— */
+/* Bottom right circle button */
+/* ----------—----------—----------—----------—----------— */
+.circle-pause-button {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+    width: 40px; /* Width of the circle */
+    height: 40px; /* Height of the circle */
+    background-color: white; /* Circle background color */
+    border: 2px solid darkgrey;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+
+
+
+
+/* ----------—----------—----------—----------—----------— */
+/* First container */
+/* ----------—----------—----------—----------—----------— */
+
+    /* Style the container to take up the full screen */
+    .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Style the image to cover the full container */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Preserve aspect ratio and cover the container */
+    }
+
+    /* Style the overlay to make the image darker */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style the text container to center text */
+    .text-container {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
+        text-align: center;
+        color: white;
+    }
+
+    .mask-top {
+        top: -5px;
+    }
+
+    .mask-bottom {
+        bottom: -5px;
+    }
+
+    .mask-top>img{
+        transform: rotate(180deg);
+    }
+
+    .mask-bottom, .mask-top {
+        z-index: 1;
+        position: absolute;
+    }
+
+    .mask-bottom, .mask-top > img {
+        width: 100vw;
+    }
+    
+    .story-flowers{
+        max-width: 300px;
+    }
+
+
+
+
+
+/* ----------—----------—----------—----------—----------— */
+/* Bride container */
+/* ----------—----------—----------—----------—----------— */
+    .container.bride-container {
+        height: auto;
+        padding-bottom: 100px;
+        width: 100%; /* Set the width to 100% for full width */
+        min-height: 50vh; /* Set a specific height for the div */
+        background-image: url('../images/bride-bottom-bg.png');
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-color: #DCDCDC;
+    }
+
+    .bride-container>.title{
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .bride-container>.title>img{
+        width: auto;
+        height: 200px;
+        filter: brightness( 52% ) contrast( 100% ) saturate( 81% ) blur( 0px ) hue-rotate( 0deg );
+    }
+
+    .bride-container>.title>p{
+        z-index:1;
+        margin-top: -145px;
+        font-size: 80px;
+        font-family: 'Great Vibes', sans-serif;
+    }
+
+    .bride-container>.bride{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .oval-card {
+        /* padding-bottom: 120px !important; */
+        max-width: 300px;
+        background-color: #FFF;
+        border: 1px solid #FFF;
+        border-radius: 200px;
+        padding: 20px;
+        margin: 0 10px;
+        width: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .oval-card h2 {
+        font-size: 60px;
+        font-family: 'Tangerine', sans-serif;
+    }
+
+    .oval-card h3 {
+        font-family: 'Lora', sans-serif;
+    }
+
+    .oval-card p {
+        font-family: 'Lora', sans-serif;
+    }
+
+    .oval-card p {
+        margin: unset;
+    }
+
+    .oval-card hr {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .oval-card-img {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%; /* This ensures a 1:1 aspect ratio (square) */
+    }
+
+    .oval-card-img>img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* This ensures the image covers the container */
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .separator {
+        margin: 0 -35px;
+        z-index: 1;
+        font-size: 200px;
+        font-family: 'Playfair Display', sans-serif;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .bride-container>.title>img {
+            height: 120px;
+        }
+
+        .bride-container>.title>p{
+            margin-top: -85px;
+            font-size: 40px;
+        }
+
+        .oval-card {
+            max-width: 38vw;
+            margin-bottom: 0px;
+        }
+
+        .oval-card h2 {
+            font-size: 2em;
+        }
+
+        .separator {
+            margin: 0 -40px;
+            font-size: 5em;
+        }
+    }
+
+    .bride-bottom-rose{
+        width: 55%;
+        max-width: 40vw;
+        margin-top: 15px;
+    }
+
+    .ig_link {
+        font-size: 15px;
+    }
+    .fa-instagram {
+        padding-top: 20px;
+    }
+
+
+
+
+/* ----------—----------—----------—----------—----------— */
+/* Event container */
+/* ----------—----------—----------—----------—----------— */
+    .event-container {
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../images/gallery16.jpeg'); */
+        background-image: url('../images/gallery16.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center bottom 30%;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        /* filter: brightness(50%); */
+    }
+
+    /* .event-overlay::before {
+        content: '';
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    } */
+
+    .event-container>.event-text {
+        margin:auto;
+        /* color: white !important; */
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .event-text>.title{
+        margin-top: 100px;
+        display: inline-flex;
+        color: white;
+        align-items: baseline;
+    }
+
+    .event-text>.title>h1{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Great Vibes', cursive;
+        color: white;
+        margin-top: 0;
+    }
+
+    .event-card {
+        background-color: rgba(0, 0, 0, 0.5);
+        margin: 10px;
+        padding: 50px 20px;
+        border-radius: 1000px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-container {
+        width: 35vw;
+        max-width: 90%;
+    }
+
+    .event-bottom-rose{
+        height: unset;
+        max-width: 35%;
+    }
+
+    .event-icon {
+        width: auto;
+        max-height: 200px;
+    }
+
+    .event-container>.event-text>h1{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Great Vibes', cursive;
+        color: black;
+    }
+
+    .event-card>h2{
+        font-size: 40px;
+        font-family: 'Cinzel Decorative', sans-serif;
+    }
+
+    .location{
+        text-align: left;
+        font-family: 'Lora', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .location>tbody>tr>td{
+        vertical-align: top;
+    }
+
+    .location-icon {
+        text-align: center;
+        padding-right: 5px;
+        padding-bottom: 8px;
+    }
+    
+    .map-container {
+        margin: auto;
+        margin-top: 40px;
+        /* width: 35vw; */
+        height: 20vw;
+        /* max-width: 90%; */
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .card-container {
+            width: 90%;
+        }
+        .map-container {
+            margin-bottom: 5vh;
+            height: 50vw;
+        }
+    }
+
+/* ----------—----------—----------—----------—----------— */
+/* Gallery container */
+/* ----------—----------—----------—----------—----------— */
+    .owl-dots {
+        display: none;
+    }
+
+    .container.gallery-container{
+        height: auto;
+        background-color: #1D1D1D;
+        padding: 5em 0;
+    }
+    
+    .gallery-container {
+        text-align: center; /* Center-align the content within the container */
+        padding: 20px; /* Add some padding for spacing */
+    }
+    
+    .leaf-image {
+        display: inline-block; /* Make the leaf images inline-block to align them next to the text */
+        margin: 0 10px; /* Add margin for spacing between the leaf images and text */
+    }
+    
+    h1 {
+        font-size: 24px; /* Adjust the font size for the gallery title */
+    }
+    
+    /* Style the leaf images (you can adjust the styles as needed) */
+    .leaf-image img {
+        width: 40px; /* Set the width of the leaf images */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 10px;
+    }
+    .leaf-image.balon img {
+        width: 80px;
+    }
+    .flipX img {
+        transform: scaleX(-1);
+    }
+    .flipY img {
+        transform: scaleY(-1);
+    }
+    
+    .gallery-container>.title{
+        display: inline-flex;
+        color: white;
+        align-items: baseline;
+    }
+
+    .gallery-container>.title>h1{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Great Vibes', cursive;
+        color: white;
+        margin: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------—----------—----------—----------—----------— */
+/* RSVP container */
+/* ----------—----------—----------—----------—----------— */
+    .curv-gray {
+        background: url(../images/curv.png) repeat-x;
+        height: 20px;
+        margin-top: 0px;
+        position: relative;
+        top: -10px;
+    }
+    .curv-gray2 {
+        background: url(../images/curv2.png) repeat-x;
+        height: 20px;
+        margin-top: -20px;
+        position: relative;
+        margin-bottom: -12.7px;
+    }
+    
+    /* Styles for the container */
+    .rsvp-container {
+        text-align: center;
+        background: #5D5D5D;
+        height: auto;
+        padding: 100px 0;
+        color: white;
+    }
+
+    .rsvp-content {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    
+    .rsvp-content>.title{
+        display: inline-flex;
+        color: white;
+        align-items: baseline;
+    }
+
+    .rsvp-content>.title>h1{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Great Vibes', cursive;
+        color: white;
+        margin: 0;
+    }
+
+    /* Styles for the form */
+    #rsvp-form {
+        padding: 20px;
+        /* border: 1px solid #ccc; */
+        text-align: center;
+        background-image: url('../images/gallery15.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    #rsvp-form input[type="text"],
+    #rsvp-form textarea,
+    #rsvp-form select {
+        box-sizing: border-box;  
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid black;
+        border-radius: 0px;
+        border-color: #ccc;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    #rsvp-form input[type="text"]::placeholder,
+    #rsvp-form textarea::placeholder,
+    #rsvp-form select::placeholder {
+        color: white;
+        opacity: 0.7;
+      }
+
+    /* #rsvp-form select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url("dropdown-arrow.png") no-repeat right center;
+        background-size: 20px;
+        padding-right: 30px;
+    } */
+
+    /* #rsvp-form input[type="submit"] {
+        width: auto;
+        float: right;
+        padding: 10px;
+        background: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    } */
+
+    #rsvp-form br {
+        margin-bottom: 100px;
+    }
+
+    /* Pagination */
+    #pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* .page-link {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #007BFF;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    .page-link:hover {
+        background: #0056b3;
+    } */
+
+    /* Styles for the guest list */
+    #guest-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .guest {
+        display: flex;
+        color: white;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .guest img {
+        height: 30px;
+        width: auto;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .guest-details {
+        flex: 1;
+        text-align: left;
+    }
+
+    .guest-details h3 {
+        font-size: 18px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .guest-date {
+        color: darkgrey;
+    }
+
+    .guest-date i {
+        margin-right: 5px;
+    }
+
+    .guest-details p {
+        margin: 5px 0;
+    }
+
+    .attendance-status {
+        text-align: center;
+        width: auto;
+        margin-left: 15px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .attendance-status.attendance-yes {
+        background: #BFDC80;
+    }
+
+    .attendance-status.attendance-no {
+        background: #F74F4F;
+    }
+
+    .attendance-status i {
+        margin-right: 5px;
+    }
+
+    /* Add any additional styling as needed */
+
+
+
+/* ----------—----------—----------—----------—----------— */
+/* Gift container */
+/* ----------—----------—----------—----------—----------— */
+    .gift-container{
+        height: 120vh;
+    }
+
+    .gift-text>.title{
+        display: inline-flex;
+        color: white;
+        align-items: baseline;
+    }
+
+    .gift-text>.title>h1{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Great Vibes', cursive;
+        color: white;
+        margin: 0;
+    }
+
+    .gift-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
+        text-align: center;
+        color: white;
+    }
+
+    .accordion {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .accordion-item {
+        margin-bottom: 10px;
+        border: 1px solid #1D1D1D;
+    }
+
+    .accordion-header {
+        background-color: #1D1D1D;
+        padding: 10px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .accordion-content {
+        display: none;
+        padding-bottom: 10px;
+        background: white;
+        color: black;
+    }
+
+    .accordion-content.active {
+        display: block;
+    }
+
+    #qris-image{
+        max-height: 400px;
+        width: auto;
+    }
+
+
